@@ -1,0 +1,9 @@
+# EnderMedievalLobby Configuration
+lobby:
+  set: false
+  spawn: ""
+shop:
+  enabled: true
+auction:
+  enabled: true
+  duration-hours: 24

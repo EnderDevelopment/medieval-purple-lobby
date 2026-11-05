@@ -1,0 +1,155 @@
+name: EnderMedievalLobby
+version: 1.0.0
+main: com.enderdevelopment.plugin.Main
+api-version: "1.21"
+description: Medieval purple themed lobby with economy, shops, auction house, homes and more.
+author: EnderDevelopment
+commands:
+  balance:
+    description: Check your balance.
+    usage: /balance
+    aliases: [bal, money]
+  pay:
+    description: Pay another player money.
+    usage: /pay <player> <amount>
+  eco:
+    description: Economy administration.
+    usage: /eco <give|take|set|reset> <player> <amount>
+    permission: endermedieval.admin.eco
+  shop:
+    description: Open the medieval shop.
+    usage: /shop
+  auction:
+    description: Open the auction house.
+    usage: /auction [sell <price>]
+    aliases: [ah]
+  bid:
+    description: Bid on an item.
+    usage: /bid <auctionId> <amount>
+  bounty:
+    description: Bounty commands.
+    usage: /bounty [set <player> <amount> | claim <player>]
+  sethome:
+    description: Set your home.
+    usage: /sethome [name]
+  home:
+    description: Teleport to your home.
+    usage: /home [name]
+  homes:
+    description: List your homes.
+    usage: /homes
+  delhome:
+    description: Delete a home.
+    usage: /delhome <name>
+  rtp:
+    description: Randomly teleport to a safe location.
+    usage: /rtp
+    aliases: [randomteleport, wild]
+  spawn:
+    description: Teleport to the lobby spawn.
+    usage: /spawn
+  lobby:
+    description: Return to the medieval lobby.
+    usage: /lobby
+  warp:
+    description: Teleport to a warp.
+    usage: /warp <name>
+  warps:
+    description: List all warps.
+    usage: /warps
+  setwarp:
+    description: Create a warp.
+    usage: /setwarp <name>
+    permission: endermedieval.admin.warp
+  delwarp:
+    description: Delete a warp.
+    usage: /delwarp <name>
+    permission: endermedieval.admin.warp
+  kits:
+    description: View available kits.
+    usage: /kits
+  kit:
+    description: Claim a kit.
+    usage: /kit <name>
+  tpa:
+    description: Request to teleport to a player.
+    usage: /tpa <player>
+  tpahere:
+    description: Request a player teleport to you.
+    usage: /tpahere <player>
+  tpaccept:
+    description: Accept a teleport request.
+    usage: /tpaccept
+  tpdeny:
+    description: Deny a teleport request.
+    usage: /tpdeny
+  msg:
+    description: Send a private message.
+    usage: /msg <player> <message>
+    aliases: [pm, whisper, tell]
+  reply:
+    description: Reply to the last private message.
+    usage: /reply <message>
+    aliases: [r]
+  fly:
+    description: Toggle flight.
+    usage: /fly
+    permission: endermedieval.admin.fly
+  god:
+    description: Toggle god mode.
+    usage: /god
+    permission: endermedieval.admin.god
+  heal:
+    description: Heal yourself.
+    usage: /heal
+    permission: endermedieval.admin.heal
+  feed:
+    description: Feed yourself.
+    usage: /feed
+    permission: endermedieval.admin.feed
+  gamemode:
+    description: Change your gamemode.
+    usage: /gamemode <creative|survival|adventure|spectator>
+    aliases: [gm]
+    permission: endermedieval.admin.gamemode
+  accepthub:
+    description: Set the lobby spawn.
+    usage: /accepthub
+    permission: endermedieval.admin.hub
+permissions:
+  endermedieval.admin.*:
+    description: All admin permissions.
+    default: op
+    children:
+      endermedieval.admin.eco: true
+      endermedieval.admin.warp: true
+      endermedieval.admin.fly: true
+      endermedieval.admin.god: true
+      endermedieval.admin.heal: true
+      endermedieval.admin.feed: true
+      endermedieval.admin.gamemode: true
+      endermedieval.admin.hub: true
+  endermedieval.admin.eco:
+    description: Economy management.
+    default: op
+  endermedieval.admin.warp:
+    description: Warp management.
+    default: op
+  endermedieval.admin.fly:
+    description: Flight access.
+    default: op
+  endermedieval.admin.god:
+    description: God mode access.
+    default: op
+  endermedieval.admin.heal:
+    description: Heal command.
+    default: op
+  endermedieval.admin.feed:
+    description: Feed command.
+    default: op
+  endermedieval.admin.gamemode:
+    description: Gamemode command.
+    default: op
+  endermedieval.admin.hub:
+    description: Set the hub spawn.
+    default: op
